@@ -1,0 +1,17 @@
+[
+    {
+        "name": "BBQ Cover",
+        "price": 11,
+        "image_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.wXsh-3AGoZW9UNgk5BHOdQHaHa%26pid%3DApi&f=1"
+    },
+    {
+        "name": "Swimming Pool",
+        "price": 100,
+        "image_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhome-improvement-info.com%2Fwp-content%2Fuploads%2F2020%2F03%2F9-2.jpg&f=1&nofb=1"
+    },
+    {
+        "name": "Suncream",
+        "price": 5,
+        "image_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjohnlewis.scene7.com%2Fis%2Fimage%2FJohnLewis%2F234319673%3F%24rsp-pdp-port-1440%24&f=1&nofb=1"
+    }
+]
