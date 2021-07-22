@@ -7,9 +7,9 @@
   "license": "MIT",
   "dependencies": {
     "canvas": "^2.8.0",
-    "fastify": "^3.19.1"
+    "fastify": "^3.19.2"
   },
-  "scripts":{
+  "scripts": {
     "test": "mocha"
   },
   "keywords": [],
