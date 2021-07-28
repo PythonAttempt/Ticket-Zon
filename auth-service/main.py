@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request
 import jwt
-
+import time
 
 app = Flask(__name__)
 
@@ -28,7 +28,8 @@ def jwt_issuer():
     for user in users:
         if(user['username'] == username and user['password'] == password):
             #return (username + " " + password)
-            return jwt.encode({'username': username}, 'my-super-super-secret', algorithm='HS256')
+            now = int(time.time())
+            return jwt.encode({"application": "jst-issuer"}, 'my-super-super-secret', algorithm='HS256', headers = {"iss": username, "iat": now, "exp": now + 300})
 
     # generate JWT token
 
