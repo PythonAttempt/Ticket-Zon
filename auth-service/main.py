@@ -1,3 +1,4 @@
+from os import lseek
 from flask import Flask
 from flask import request
 import jwt
@@ -29,13 +30,20 @@ def jwt_issuer():
         if(user['username'] == username and user['password'] == password):
             #return (username + " " + password)
             now = int(time.time())
-            return jwt.encode({"application": "jst-issuer"}, 'my-super-super-secret', algorithm='HS256', headers = {"iss": username, "iat": now, "exp": now + 300})
+            return jwt.encode({"application": "jst-issuer"}, "my-super-super-secret", algorithm='HS256', headers = {"iss": username, "iat": now, "exp": now + 300})
 
     # generate JWT token
 
     # return the JWT token
     return {'status': 'Unauthorized'}, 401
 
+@app.route('/jwt-verify')
+def jwt_verify():
+    token = request.args.get('token')
+    try:
+        return jwt.decode(token, "my-super-super-secret", algorithms=["HS256"])
+    except jwt.ExpiredSignatureError:
+        return {'status': 'Unauthorized'}, 401
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0")
